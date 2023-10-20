@@ -203,7 +203,7 @@ int main(){
      printf("\n\n\n \t RECORD OF PAGE %d ADDED",page_no);    
     printf("\n\n \t DO YOU WANT TO ADD MORE RECORDS: [y/n]:");
      fflush(stdin);
-    scanf("%s",&x);
+    scanf("%s",&ch);
     if(ch=='N'||ch=='n'){
         printf("%c",ch);
         break;
