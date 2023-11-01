@@ -33,7 +33,8 @@ int i;
  struct Fish fishes[5];
  int plant_x = 300, plant_y = 300;
  int bubble_x[MAX_BUBBLES], bubble_y[MAX_BUBBLES];
- int grass_x=200,grass_y=470;
+ int gx=40,gy=470;
+ int x,y;
  void boundary_fill(int x,int y,int f_color,int b_color)
  {
  if(getpixel(x,y)!=b_color&& getpixel(x,y)!=f_color)
@@ -192,6 +193,169 @@ void drawSeaFloor() {
      ellipse(568,430,0,360,40,30);
      ellipse(640,420,0,360,30,30);
 
+    //sea grass
+    setcolor(GREEN);
+    line(300,300,320,280);
+    line(300,300,318,280);
+    line(300,300,315,280);
+    line(300,300,312,280);
+    line(300,300,310,280);
+    line(300,300,308,280);
+    line(300,300,305,280);
+    line(300,300,302,280);
+    line(300,300,300,280);
+    line(300,300,300-2,280);
+    line(300,300,300-5,280);
+    line(300,300,300-8,280);
+    line(300,300,300-10,280);
+    line(300,300,300-12,280);
+    line(300,300,300-15,280);
+    line(300,300,300-18,280);
+    line(300,300,300-20,280);
+
+    line(300,300,300,430);
+
+    //branch 2
+    line(300,350,340,310);
+    line(340,310,340,300);
+
+    line(300+40,300,320+40,280);
+    line(300+40,300,318+40,280);
+    line(300+40,300,315+40,280);
+    line(300+40,300,312+40,280);
+    line(300+40,300,310+40,280);
+    line(300+40,300,308+40,280);
+    line(300+40,300,305+40,280);
+    line(300+40,300,302+40,280);
+    line(300+40,300,300+40,280);
+    line(300+40,300,300-2+40,280);
+    line(300+40,300,300-5+40,280);
+    line(300+40,300,300-8+40,280);
+    line(300+40,300,300-10+40,280);
+    line(300+40,300,300-12+40,280);
+    line(300+40,300,300-15+40,280);
+    line(300+40,300,300-18+40,280);
+    line(300+40,300,300-20+40,280);
+
+   // branch 3
+
+   line(300,400,270,370);
+   line(270,370,270,360);
+
+    line(300-30,300+60,320-30,280+50);
+    line(300-30,300+60,318-30,280+50);
+    line(300-30,300+60,315-30,280+50);
+    line(300-30,300+60,312-30,280+50);
+    line(300-30,300+60,310-30,280+50);
+    line(300-30,300+60,308-30,280+50);
+    line(300-30,300+60,305-30,280+50);
+    line(300-30,300+60,302-30,280+50);
+    line(300-30,300+60,300-30,280+50);
+    line(300-30,300+60,300-2-30,280+50);
+    line(300-30,300+60,300-5-30,280+50);
+    line(300-30,300+60,300-8-30,280+50);
+    line(300-30,300+60,300-10-30,280+50);
+    line(300-30,300+60,300-12-30,280+50);
+    line(300-30,300+60,300-15-30,280+50);
+    line(300-30,300+60,300-18-30,280+50);
+    line(300-30,300+60,300-20-30,280+50);
+
+
+   // grass 2
+     x=100,y=350;
+    setcolor(GREEN);
+    line(100,350,120,330);
+    line(x,y,x-20,y-20);
+    line(x,y,x-18,y-20);
+    line(x,y,x-15,y-20);
+    line(x,y,x-12,y-20);
+    line(x,y,x-10,y-20);
+    line(x,y,x-8,y-20);
+    line(x,y,x-5,y-20);
+    line(x,y,x-2,y-20);
+    line(x,y,x,y-20);
+    line(x,y,x+2,y-20);
+    line(x,y,x+5,y-20);
+    line(x,y,x+8,y-20);
+    line(x,y,x+10,y-20);
+    line(x,y,x+12,y-20);
+    line(x,y,x+15,y-20);
+    line(x,y,x+18,y-20);
+    line(x,y,x+20,y-20);
+
+
+    line(100,350,100,400);
+
+    //branch 2
+    line(100,350,100,420);
+    line(x,y+40,x+20,y+20);
+    x=x+20;
+    y=y+20;
+    line(x,y,x,y);
+    line(x,y,x-20,y-20);
+    line(x,y,x-18,y-20);
+    line(x,y,x-15,y-20);
+    line(x,y,x-12,y-20);
+    line(x,y,x-10,y-20);
+    line(x,y,x-8,y-20);
+    line(x,y,x-5,y-20);
+    line(x,y,x-2,y-20);
+    line(x,y,x,y-20);
+    line(x,y,x+2,y-20);
+    line(x,y,x+5,y-20);
+    line(x,y,x+8,y-20);
+    line(x,y,x+10,y-20);
+    line(x,y,x+12,y-20);
+    line(x,y,x+15,y-20);
+    line(x,y,x+18,y-20);
+    line(x,y,x+20,y-20);
+
+   // branch 3
+   x=100;y=405;
+   line(x,y,x-30,y-40);
+   x=x-30;y=y-40;
+    line(x,y,x-20,y-20);
+    line(x,y,x-18,y-20);
+    line(x,y,x-15,y-20);
+    line(x,y,x-12,y-20);
+    line(x,y,x-10,y-20);
+    line(x,y,x-8,y-20);
+    line(x,y,x-5,y-20);
+    line(x,y,x-2,y-20);
+    line(x,y,x,y-20);
+    line(x,y,x+2,y-20);
+    line(x,y,x+5,y-20);
+    line(x,y,x+8,y-20);
+    line(x,y,x+10,y-20);
+    line(x,y,x+12,y-20);
+    line(x,y,x+15,y-20);
+    line(x,y,x+18,y-20);
+    line(x,y,x+20,y-20);
+
+
+
+   // grass 3
+
+   line(560,400,560,350);
+   x=560;
+   y=350;
+    line(x,y,x-20,y-20);
+    line(x,y,x-18,y-20);
+    line(x,y,x-15,y-20);
+    line(x,y,x-12,y-20);
+    line(x,y,x-10,y-20);
+    line(x,y,x-8,y-20);
+    line(x,y,x-5,y-20);
+    line(x,y,x-2,y-20);
+    line(x,y,x,y-20);
+    line(x,y,x+2,y-20);
+    line(x,y,x+5,y-20);
+    line(x,y,x+8,y-20);
+    line(x,y,x+10,y-20);
+    line(x,y,x+12,y-20);
+    line(x,y,x+15,y-20);
+    line(x,y,x+18,y-20);
+    line(x,y,x+20,y-20);
 
 }
 
@@ -250,7 +414,6 @@ int main() {
 	    int vertical_motion = 5 * sin(fishes[i].angle * 3.14159265 / 180);
 	    drawFish(fishes[i]);
 	   fishes[i].x += fishes[i].direction * fishes[i].speed;
-	    fishes[i].y += vertical_motion;
 	    fishes[i].angle += 10;
 	    fishes[i].frame = (fishes[i].frame + 1) % 2; // Two animation frames
 
@@ -301,13 +464,8 @@ int main() {
        //	drawPlant(plant_x, plant_y);
 
 
-	       grass_x+20;
-	       grass_y-10;
-	       if(grass_x>220){
-	       grass_x=200;
-	       grass_y=470;
-	       }
-	      drawSeaFloor(grass_x,grass_y);
+
+	      drawSeaFloor();
 
        //	drawLightEffects();
 
