@@ -3,13 +3,15 @@
 #include<stdlib.h>
 #include<cstdlib>
 #include<cstdio>
-#include<math.h>
+#include<string.h>
 #include<random>
 using namespace std;
-int acc_no=1000,serial_no=0,deleted_account_number[100],deleted_no_serial=0;
+int acc_no=1000,serial_no=0;
 int amount,number,allow;
 char garbage,sub_choice;
-
+char variablefile[20]="bankingvariable.txt";
+char accountFilename[20]="ACCOUNTDETAILS.txt";
+int money[100];
 class ACCOUNT_INFO
 {
     public:
@@ -54,12 +56,15 @@ class BALANCE :public ACCOUNT_INFO{
     }
     
     void Entery(int amount){
-       
-        Money=Money+amount;    
+        money[number]+=amount;
+        Money=Money+amount;   
+        Money=money[number]; 
+        
     }
 
     int Withdraw(int amount){
-       
+        
+        Money=money[number];
         if(amount>Money){
             cout<<"\n\n\t not Enough Money\t";
             cout<<"Enter any key to go back\t";
@@ -67,13 +72,15 @@ class BALANCE :public ACCOUNT_INFO{
             return 0;
         }
         Money=Money-amount;
+        money[number]-=amount;
         cout<<Money;
-        return 0;
+        return 1;
         
     }
 
     int show(int num){
         ACCOUNT_NO= num+1000;
+        Money=money[number];
         cout<<"\n\n\t ACCOUNT NO:-\t"<<ACCOUNT_NO;
         cout<<"\n\tBALANCE:-\t$"<<Money;
 
@@ -89,6 +96,7 @@ class BALANCE :public ACCOUNT_INFO{
     system("cls");
     cout<<"\n\n\tENTER YOUR PIN:-\t";
     cin>>number;
+    cout<<pin;
     if(number==pin)
      return 1;
     else 
@@ -113,11 +121,14 @@ class BALANCE :public ACCOUNT_INFO{
     return 0;
     }
 
+
     
     
 };
 
  BALANCE ACCOUNT[100],*ptr;
+
+
 int check(int num){
     if(num>=serial_no||num<0||num>99)
     {   cout<<serial_no;
@@ -151,8 +162,10 @@ int deposite( ){
     cout<<"\n\t\t ENETER THE AMOUNT YOU WANT TO DEPOSITE:\t";
     fflush(stdout);
     cin>>amount;
+    number=deposite_acc_no;
     ptr->Entery(amount);
     ptr->show(deposite_acc_no);
+   
      return 0;
 }
 
@@ -165,7 +178,6 @@ int transfer( BALANCE ACCOUNT[])
         cin>>sender;
         sender-=1000;
         number=check(sender);
-        cout<<number;
         if(number==101)
         return 0;
         ptr=&ACCOUNT[number];
@@ -176,6 +188,7 @@ int transfer( BALANCE ACCOUNT[])
         cout<<"\n\t ENTER THE AMOUNT:\t";
         fflush(stdout);
         cin>>amount;
+        number=sender;
        if( ptr->Withdraw(amount)==0){
         return 0;
        }
@@ -210,6 +223,7 @@ int display( ){
         else
         goto display_start;
     }
+    number=acc_no;
     ptr=&ACCOUNT[acc_no];
     number=ptr->password();
     if(number==0)
@@ -249,6 +263,7 @@ int main()
 {
     BALANCE ACCOUNT[100],*ptr;
     int choice;
+   
     while(1){
     system("cls");
     cout<<"\n\n\n\t -**WELCOME TO OUR BANKING SOFTWARE**-";
@@ -266,7 +281,7 @@ int main()
     system("cls");
 
     switch(choice){
-
+        
         case 1:
         system("cls");
         ptr=&ACCOUNT[serial_no];
@@ -323,6 +338,6 @@ int main()
 
        }
     }
-
+    
     return 0;
 }
